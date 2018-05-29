@@ -1,0 +1,418 @@
+#turnkeylightbox_Container{
+  & .lightBoxContent {
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #363938;
+    padding: 0;
+    position: fixed;
+    z-index: 10001;
+    display: none;
+    & .turnKeyImageWrapper {
+      width: 100%;
+      float: none;
+      overflow: hidden;
+      max-height: 100%;
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+    & .turnKeyTextWrapper {
+      height: 100%;
+      display: table;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;    
+      float: none;
+      background-color: #fff;
+      & .mlist-outer-wrapper {
+        height: 100%;
+        display: table;
+        width: 100%;
+        & .mlist-wrapper {
+          height: 100%;
+          display: table;
+          margin-top: 0;
+          width: 100%;
+          & form, & #thankyouBlock.final-screen {
+            display: table-cell;
+            vertical-align: middle;
+          }
+          & form {
+            & .emailTitle {
+              text-align: center;
+              font-size: 24px;
+              font-weight: bold;
+              font-family: Futura, Verdana, sans-serif;
+              padding-bottom: 20px;
+            }
+            & .mlist-header {
+              color: #363938;
+              font-family: Futura, Verdana, sans-serif;
+              padding-bottom: 14px;
+              text-align: center;
+              text-transform: uppercase;
+            }
+            & .mlist-submit {
+              margin: 0;
+              & input {
+                margin: 0;
+              }
+            }
+          }
+          & #thankyouBlock {
+            padding: 0;
+            color: #363938;
+            & #errorLabelContainer2 {
+              color: #ed3d3d;
+            }
+            & .mlist-checks {
+              clear: both;
+              padding-top: 20px;
+              padding-bottom: 10px;
+            }
+            & .mlist-submit-new {
+              padding: 10px 0 20px 0;
+              & input {
+                margin: 0;
+              }
+            }
+            & select {
+              &#dobMonth {
+                float: left;
+                width: 47%;
+                margin-right: 0;
+              }
+              &#dobDay {
+                float: right;
+                width: 47%;
+                margin-right: 0;
+              }
+            }
+          }
+          & .termsWrapper a.terms {
+            text-transform: uppercase;
+            text-decoration: underline;
+          }
+        }
+      }
+      & .turnKeyMerchData, & .turnKeyGeneric {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        & .merchLink a, & .genericCTA a {
+          background-color: #ed3d3d;
+          border: none;
+          color: #fff;
+          cursor: pointer;
+          text-decoration: none;
+          text-transform: uppercase;
+          text-align: center;
+          display: block;
+          &:hover {
+            background-color: #a1a1a1;
+          }
+        }
+      }
+      & .turnKeyMerchData {
+        width: 100%;
+        & .merchTitle {
+          font-size: 24px;
+          font-weight: bold;
+          font-family: "IM Fell Double Pica", "Times New Roman", Times, serif;
+          margin: 0 0 15px;
+        }
+        & .merchDesc {
+          margin: 0 0 15px;
+        }
+        & .merchPrice {
+          font-size: 18px;
+          font-weight: bold;
+          margin: 0 0 15px;
+        }
+        & .merchLink a {
+          padding: 10px;
+          font-size: 1em;
+        }
+      }
+      & .turnKeyGeneric {
+        & .genericTitle {
+          text-align: center;
+          font-size: 24px;
+          font-weight: bold;
+          font-family: "IM Fell Double Pica", "Times New Roman", Times, serif;
+          padding-bottom: 20px;
+        }
+        & .genericDesc {
+          padding-bottom: 12px;
+          font-family: "IM Fell Double Pica", "Times New Roman", Times, serif;
+        }
+        & .genericCTA {
+          margin-top: 10px;
+        & a {
+          padding: 10px;
+          font-size: 1em;
+          padding: 0.75em;
+          }
+        }
+      }
+    }
+    & .lightBoxClose.turnKeyClose a {
+      background-image: resolve(bg_closebtn.png);
+      background-repeat: no-repeat;
+      display: block;
+      height: 17px;
+      position: absolute;
+      right: 5px;
+      text-indent: -9998px;
+      top: 8px;
+      width: 17px;
+      cursor: pointer;
+      z-index: 1;
+      &:hover {
+        background-position: 0 -28px;
+      }
+    }
+  }
+}
+
+.view-turnkey-lightbox-toaster {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  #turnkeylightbox_Container .lightBoxContent .lightBoxClose.turnKeyClose a {
+    right: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #turnkeylightbox_Container .lightBoxContent .turnKeyImageWrapper {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #turnkeylightbox_Container .lightBoxContent .turnKeyTextWrapper {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body, html {
+    height: 100%;
+  }
+  body {
+    padding-top: 0px !important;
+  }
+  .tklb ~ {
+    .region #toolbar {
+      display: none !important;
+    }
+    div#page {
+      display: none;
+    }
+  }
+  .lightBoxContent.tklb {
+    height: 100%;
+    position: fixed;
+    z-index: 20;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    /*Hack for the close button*/
+    .lightBoxClose.turnKeyClose a {
+      bottom: 0px;
+      width: 100%;
+      color: #000;
+      text-indent: 0px;
+      background-color: #999;
+      text-align: right;
+      font-style: italic;
+      background-image: none;
+      position: fixed;
+      padding-right: 20px;
+      opacity: 0.9;
+      z-index: 60;
+      height: 20px;
+    }
+    .backGroundImage {
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      display: block;
+      background-position: center center;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      opacity: .25;
+      -webkit-filter: blur(5px);
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+      filter: blur(5px);
+    }
+    .turnKeyTextWrapper {
+      background-color: transparent;
+      height: auto;
+      padding: 12px;
+      padding-bottom: 100px;
+      .mlist-outer-wrapper .mlist-wrapper form .mlist-submit {
+        margin: 0;
+        input {
+          margin: 0;
+        }
+      }
+      .emailTitle, .genericTitle, .merchTitle {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: Futura, Verdana, sans-serif;
+        padding-bottom: 20px;
+      }
+      .genericDesc {
+        font-size: 14px;
+        text-align: center;
+      }
+      .merchPrice {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 0 15px;
+        text-align: center;
+      }
+      .termsWrapper.second {
+        margin-bottom: 10px;
+      }
+      .merchDesc {
+        text-align: center;
+        margin: 0 0 15px;
+      }
+    }
+    .turnKeyImageWrapper {
+      max-height: none;
+      margin: 50px auto 0px;
+      width: 50%;
+      box-sizing: border-box;
+      border: 5px solid #fff;
+      .turnKeyImage {
+        font-size: 0px;
+      }
+    }
+  }
+}
+
+.genericCTA, .turnKeyMerchData .merchLink {
+  margin-top: 10px;
+}
+
+.genericCTA a, .turnKeyMerchData .merchLink a {
+  padding: 10px;
+  font-size: 1em;
+  padding: 0.75em;
+}
+
+#turnkeylightbox_Container .fade-in, .splash_overall.fade-in, #turnkeylightbox_Container .lightBoxContent.fade-in {
+  display: block;
+  animation: fade-in 0.8s forwards;
+  -webkit-animation: fade-in 0.8s forwards;
+}
+
+.splash_overall {
+  animation: fade-out 0.8s forwards;
+  -webkit-animation: fade-out 0.8s forwards;
+}
+
+#turnkeylightbox_Container {
+  .lightBoxContent {
+    animation: fade-out 0.8s forwards;
+    -webkit-animation: fade-out 0.8s forwards;
+  }
+  .fade-out {
+    opacity: 1;
+    animation: fade-out 0.8s forwards;
+    -webkit-animation: fade-out 0.8s forwards;
+  }
+}
+
+.splash_overall.fade-out, #turnkeylightbox_Container .lightBoxContent.fade-out {
+  opacity: 1;
+  animation: fade-out 0.8s forwards;
+  -webkit-animation: fade-out 0.8s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    display: block;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@-webkit-keyframes fade-in {
+  0% {
+    display: block;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+  }
+}
+
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+  }
+}
+
+
+.splash_overall {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+}

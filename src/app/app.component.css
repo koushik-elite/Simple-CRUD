@@ -1,0 +1,14 @@
+h1 {
+    text-transform: uppercase;
+    font-family: 'Monoton', cursive;
+    font-size: 64px;
+    line-height: 1;
+    margin: 0;
+    display: inline-block;
+}
+h2 {
+    text-transform: uppercase;
+    font-family: 'Pangolin', cursive;
+    line-height: 1;
+    display: inline-block;
+}

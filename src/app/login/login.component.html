@@ -1,0 +1,22 @@
+<h1>Login Please</h1>
+<form (ngSubmit)="onSubmit(login.form.valid)" #login="ngForm">
+    <div class="field">
+        <label>Username/Email</label>
+        <input type="text" minlength="4" #email="ngModel" class="form-field email" required pattern="^[\w._-]+[+]?[\w._-]+@[\w.-]+\.[a-zA-Z]{2,6}$" [(ngModel)]="user.email" id="email" name="email" placeholder="Enter Your Email Address...">
+        <div>You can use letters, numbers & periods</div>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+            Please provide a proper email id (dont use mailinator)
+        </div>
+    </div>
+    <div class="field">
+        <label>Password</label>
+        <input type="password" minlength="4" name="password" class="form-field" required [(ngModel)]="user.password" placeholder="Password">
+        <div>Use 8 or more characters with a mix of letters, numbers & symbols</div>
+        
+    </div>
+    <button type="submit" [disabled]="!login.form.valid">Login</button> or <a [routerLink]="['/signup']">Register</a>
+    
+</form>
+<div *ngIf="formErrors.failed" class="alert alert-danger">
+    Login Failed
+</div>
